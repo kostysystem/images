@@ -1,43 +1,18 @@
-
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
 <meta charset="utf-8" />
-<title>Произошла ошибка - KostyImages</title>
-  <link rel="icon" href="/favicon.ico">
-<div id="styles">
-<link rel="stylesheet" type="text/css" href="/styles.css" />
-</div>
-<style>
-.nydetcya-kogda-nibyd {
-color: gray;
-}
-</style>
+<script>
+  fetch('/images/').then(response => response.text()).then(data => {
+    document.body.innerHTML = `<h1>Список файлов и дирректорий</h1><br><hr><ul><li><a href="../">../</a></li>${
+      data.match(/href="([^"]*)"/g).map(file => `<li><a href="${file.replace(/href="|"/g,'')}">${file.replace(/href="|"/g,'')}</a></li>`).join('')
+    }</ul><hr>
+<i>Служебная страница веб-ресурса KostySystem.</i>
+<i>Работает на GitHub Pages.</i>`;
+  });
+</script>
 </head>
 <body>
-<div id="menu">
-<div class="zakrep">
-<nav>  
-   <ul class="topmenu">
-    <li> <h2> KostyImages</h2></li>
-    <li> </li>
-  </ul>
-</div>
-</nav>
-</div>
-<center>
-<br>
-<br>
-<img src="imglogo.png" width="70" height="70">
-<h1>KOSTYIMAGES</h1>
-<h2>Вы не имете доступ к данной странице!</h2>
-<h3>Код ошибки: 403.</h3>
-<br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-</center>
-<div class="copyright" id="copyright">
-<center> <br><br> <h2>KOSTYIMAGES</h2> <h5 style="text-align: right;">© KostySystem, 2024</h5> <br> 
-</center>
-</div>
+<h1>Произошла ошибка!</h1>
 </body>
 </html>
