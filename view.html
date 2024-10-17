@@ -33,7 +33,9 @@ height: auto;
 </div>
 <br>
 <div id="img">
-<p>Загрузка...</p>
+<h1>KostyStorage</h1>
+<p>Загрузка изображения...</p>
+<p><a href="/">Отменить и перейти на главную KostySystem</a></p>
 </div>
 </center>
 <!--
@@ -63,7 +65,8 @@ if(window.location.hash) {
 var imgp = document.getElementById("img");
 imgp.innerHTML = "<img src=\""+ imgpath +"\" alt=\"Изображение\"></img>";
 } else {
-    window.location.hash = "#/images/404image.png";
+var imgp = document.getElementById("img");
+imgp.innerHTML = "<h1>KostyStorage</h1><p>Путь к изображению не введён! Введите его в URL через HASH (пример: https://kostysystem.github.io/images/view.html#/images/newbie-1.png)</p>";
 }
 </script>
 </body>
